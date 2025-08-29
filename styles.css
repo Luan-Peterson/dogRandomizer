@@ -1,29 +1,48 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+
 .junior {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(114, 6, 255);
-
+    background-color: rgb(52, 86, 117);
+    gap: 20px;
 }
-
 
 #niha {
     height: 300px;
     width: 300px;
+    object-fit: cover;
+    border-radius: 10%;
+    border-width: 100px;
+    width: 300px;
+
+    
+
+    
 }
 
 #junin {
-    display: block;
-    margin: 0%;
-   
-
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #000000;
+    color: aqua;
+    font-weight: bold;
 }
 
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aqua;
+    background-color: black;
+}

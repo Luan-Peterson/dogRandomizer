@@ -19,11 +19,28 @@
 
 //  CarregarUsuarios()
 
- let botao = document.getElementById('junin')
 
-botao.addEventListener('click',  async() => {
-    let response = await fetch('https://dog.ceo/api/breeds/image/random');
-    let data = await response.json()
-    document.getElementById('niha').src = data.message
-})
+let botao = document.getElementById('junin')
 
+let vamo = false;
+let intervalo = null;
+
+async function trocarImagem() {
+        let response = await fetch('https://dog.ceo/api/breeds/image/random');
+        let data = await response.json()
+        document.getElementById('niha').src = data.message
+}
+
+botao.addEventListener('click', () => {
+    if (vamo) {
+        clearInterval(intervalo);
+        vamo = false
+
+
+    } else {
+        trocarImagem()
+        intervalo = setInterval(trocarImagem, 2000);
+        vamo = true
+
+    }
+});
